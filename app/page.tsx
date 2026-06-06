@@ -130,34 +130,27 @@ export default function Home() {
 
                 {/* Mobile Nav Links Overlay */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden fixed inset-0 top-[73px] bg-space-dark/95 backdrop-blur-lg z-40 border-t border-slate-900 px-6 py-10 flex flex-col gap-6 font-mono text-sm tracking-widest">
-                        <a
-                            href="#transition"
-                            onClick={toggleMobileMenu}
-                            className="py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400 transition-colors"
-                        >
-                            01 // JOURNEY
-                        </a>
+                    <div className="md:hidden absolute top-full left-0 right-0 bg-space-dark/95 backdrop-blur-lg z-40 border-t border-slate-900 px-6 py-10 flex flex-col gap-6 font-mono text-sm tracking-widest">
                         <a
                             href="#skills"
                             onClick={toggleMobileMenu}
                             className="py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400 transition-colors"
                         >
-                            02 // SKILLS
+                            01 // SKILLS
                         </a>
                         <a
                             href="#projects"
                             onClick={toggleMobileMenu}
                             className="py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400 transition-colors"
                         >
-                            03 // PROJECTS
+                            02 // PROJECTS
                         </a>
                         <a
                             href="#contact"
                             onClick={toggleMobileMenu}
                             className="py-2 border-b border-slate-900 text-slate-300 hover:text-cyan-400 transition-colors"
                         >
-                            04 // CONTACT
+                            03 // CONTACT
                         </a>
                         <a
                             href="#contact"
