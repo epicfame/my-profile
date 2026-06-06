@@ -73,6 +73,21 @@ export default function Home() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+            document.documentElement.style.overflow = "";
+        };
+    }, [mobileMenuOpen]);
+
     const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
     return (
