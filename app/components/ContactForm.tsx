@@ -34,7 +34,7 @@ export default function ContactForm() {
         e.preventDefault();
         if (!formData.name || !formData.email || !formData.message) {
             setStatus("error");
-            setLogs(["[ERROR] Missing required telemetry parameters.", "Please check fields."]);
+            setLogs(["[ERROR] Missing required fields.", "Please check fields."]);
             return;
         }
 
@@ -42,7 +42,7 @@ export default function ContactForm() {
         setLogs([]);
 
         await addLogLine("[INITIATING] Sub-space connection to Giovanni's terminal...", 400);
-        await addLogLine("[RESOLVING] Address: giovanni.jose.earth.sol.milkyway", 300);
+        await addLogLine("[RESOLVING] Address: giovanni.jricardo@gmail.com", 300);
         await addLogLine("[ENCRYPTING] Packing payload using SHA-256...", 500);
         await addLogLine(`[METADATA] Sender: ${formData.name.toUpperCase()} <${formData.email}>`, 300);
         await addLogLine(`[METADATA] Subject: ${formData.subject}`, 200);
@@ -50,6 +50,12 @@ export default function ContactForm() {
         await addLogLine("[SUCCESS] Uplink verified. Code: 202 ACCEPTED", 400);
         await addLogLine(`[RESPONSE] Giovanni: "Message received, human. Initiating response in T-minus 24h."`, 400);
 
+        const subject = encodeURIComponent(formData.subject);
+        const body = encodeURIComponent(
+            `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+        );
+
+        window.location.href = `mailto:giovanni.jricardo@gmail.com?subject=${subject}&body=${body}`;
         setStatus("success");
     };
 
@@ -136,7 +142,7 @@ export default function ContactForm() {
                     {/* Message */}
                     <div>
                         <label htmlFor="message" className="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">
-                            Message / Telemetry Data
+                            Message
                         </label>
                         <textarea
                             id="message"
@@ -169,12 +175,12 @@ export default function ContactForm() {
                         {status === "transmitting" ? (
                             <>
                                 <Loader2 className="w-4 h-4 animate-spin text-cyan-400" />
-                                TRANSMITTING...
+                                SENDING...
                             </>
                         ) : (
                             <>
                                 <Send className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                Transmit Signal
+                                SEND EMAIL
                             </>
                         )}
                     </button>
@@ -188,7 +194,7 @@ export default function ContactForm() {
                     </div>
 
                     <div className="border-b border-emerald-950 pb-2 mb-3 text-slate-500 flex items-center justify-between text-[10px]">
-                        <span>TELEMETRY_LOG_TERMINAL</span>
+                        <span>EMAIL_TERMINAL</span>
                         <span>UPLINK_SECURE</span>
                     </div>
 
