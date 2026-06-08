@@ -97,24 +97,25 @@ export default function Home() {
             <StarfieldBackground />
 
             {/* Decorative Nebula Lights */}
-            <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full radial-glow opacity-30 pointer-events-none" />
-            <div className="absolute top-[60%] right-[-10%] w-[600px] h-[600px] rounded-full radial-glow-cyan opacity-25 pointer-events-none" />
+            {/* <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full radial-glow opacity-30 pointer-events-none" />
+            <div className="absolute top-[60%] right-[-10%] w-[600px] h-[600px] rounded-full radial-glow-cyan opacity-25 pointer-events-none" /> */}
 
             {/* 2. Navigation Header */}
             <header
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-space-dark/85 backdrop-blur-md border-b border-slate-900/80 py-4"
-                    : "bg-transparent py-6"
-                    }`}
+                className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300 ${
+                    scrolled
+                    ? "bg-space-dark/85 backdrop-blur-md border-b border-slate-900/80 py-3"
+                    : "bg-transparent py-4"
+                }`}
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+                <div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
                     {/* Logo */}
                     <a href="#hero" className="flex items-center gap-2 group">
                         <div className="relative w-8 h-8 flex items-center justify-center border border-cyan-500/50 rounded-lg bg-indigo-950/40 group-hover:border-cyan-400 transition-all duration-300">
                             <Rocket className="w-4 h-4 text-cyan-400 group-hover:rotate-45 transition-transform duration-500" />
                         </div>
                         <span className="font-mono text-base md:text-lg font-bold tracking-wider text-slate-100 group-hover:text-cyan-400 transition-colors">
-                            GIOVANNI<span className="text-cyan-400">.JOSE</span>.RICARDO
+                            GIOVANNI<span className="text-cyan-400">.JR</span>
                         </span>
                     </a>
 
@@ -184,8 +185,8 @@ export default function Home() {
                 className="min-h-screen flex flex-col justify-center items-center relative pt-20 px-6 md:px-12 grid-bg"
             >
                 {/* Orbital Circles */}
-                <div className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] border border-indigo-950/20 rounded-full animate-pulse-slow pointer-events-none z-0" />
-                <div className="absolute w-[450px] h-[450px] md:w-[850px] md:h-[850px] border border-cyan-950/10 rounded-full animate-orbit-slow pointer-events-none z-0" />
+                {/* <div className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] border border-indigo-950/20 rounded-full animate-pulse-slow pointer-events-none z-0" />
+                <div className="absolute w-[450px] h-[450px] md:w-[850px] md:h-[850px] border border-cyan-950/10 rounded-full animate-orbit-slow pointer-events-none z-0" /> */}
 
                 <div className="max-w-4xl text-center space-y-6 md:space-y-8 z-10 flex flex-col items-center">
                     {/* Transition Badge */}
@@ -226,17 +227,11 @@ export default function Home() {
                     {/* Actions */}
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
                         <a
-                            href="#transition"
+                            href="#projects"
                             className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-slate-100 rounded-lg text-sm font-semibold shadow-lg hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
                         >
-                            About Me
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <a
-                            href="#projects"
-                            className="px-6 py-3.5 border border-slate-700 hover:border-slate-500 hover:bg-slate-900/40 text-slate-300 hover:text-slate-100 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer"
-                        >
                             View Projects
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </a>
                     </div>
                 </div>

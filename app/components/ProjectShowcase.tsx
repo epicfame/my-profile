@@ -246,6 +246,7 @@ export default function ProjectShowcase() {
                             {project.liveUrl !== "#" && (
                                 <a
                                     href={project.liveUrl}
+                                    target="_blank"
                                     className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors ml-auto"
                                 >
                                     <ExternalLink className="w-4 h-4" />
