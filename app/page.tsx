@@ -216,12 +216,6 @@ export default function Home() {
                     <p className="max-w-2xl text-slate-400 text-sm md:text-base leading-relaxed">
                         Frontend Engineer with 2+ years of experience building modern web applications.
                         Specialized in React, Next.js, and TypeScript, focused on creating responsive, accessible, and high-performance user experiences.
-                        {/* Frontend Engineer with 2+ years of experience building web applications.
-                        Specialized in React, Next.js, and TypeScript, with additional experience integrating APIs and collaborating on full-stack systems. */}
-                        {/* Software Developer with 2+ years of experience in enterprise application development. Currently specializing in Frontend Engineering.
-                        Skilled in JavaScript and React, supported by a strong background in Laravel, NestJS, and MySQL. Seeking opportunities in global teams to deliver innovative tech solutions. */}
-                        {/* I am a software engineer transitioning from backend systems to frontend craft.
-                        I bring server-hardened rules—performance profiling, strict security layers, and data schema sanity—to build beautiful, interactive client applications that are structurally bulletproof. */}
                     </p>
 
                     {/* Actions */}
@@ -231,8 +225,16 @@ export default function Home() {
                             className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-slate-100 rounded-lg text-sm font-semibold shadow-lg hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group cursor-pointer"
                         >
                             View Projects
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                         </a>
+                        <a
+                            href="/giovanni-jose-resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-6 py-3.5 border border-slate-700 hover:border-slate-500 hover:bg-slate-900/40 text-slate-300 hover:text-slate-100 rounded-lg text-sm font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer"
+                        >
+                            Download Resume
+                        </a>
+
                     </div>
                 </div>
 
