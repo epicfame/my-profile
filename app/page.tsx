@@ -182,7 +182,8 @@ export default function Home() {
             {/* 3. Hero Section */}
             <section
                 id="hero"
-                className="min-h-screen flex flex-col justify-center items-center relative pt-20 px-6 md:px-12 grid-bg"
+                 className="min-h-screen flex flex-col justify-center items-center relative pt-20 pb-32 px-6 md:px-12 grid-bg"
+                // className="min-h-screen flex flex-col justify-center items-center relative pt-20 px-6 md:px-12 grid-bg"
             >
                 {/* Orbital Circles */}
                 {/* <div className="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] border border-indigo-950/20 rounded-full animate-pulse-slow pointer-events-none z-0" />
@@ -241,7 +242,7 @@ export default function Home() {
                 {/* Scroll Call to Action */}
                 <a
                     href="#skills"
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-mono text-[10px] tracking-widest text-slate-500 hover:text-slate-300 transition-colors z-10"
+                    className="absolute bottom-30 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-mono text-[10px] tracking-widest text-slate-500 hover:text-slate-300 transition-colors z-10"
                 >
                     <span>EXPLORE_MORE</span>
                     <ChevronDown className="w-4 h-4 animate-bounce text-indigo-500" />
