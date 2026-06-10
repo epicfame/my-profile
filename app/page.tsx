@@ -242,7 +242,7 @@ export default function Home() {
                 {/* Scroll Call to Action */}
                 <a
                     href="#skills"
-                    className="absolute bottom-30 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-mono text-[10px] tracking-widest text-slate-500 hover:text-slate-300 transition-colors z-10"
+                    className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 font-mono text-[10px] tracking-widest text-slate-500 hover:text-slate-300 transition-colors z-10"
                 >
                     <span>EXPLORE_MORE</span>
                     <ChevronDown className="w-4 h-4 animate-bounce text-indigo-500" />
