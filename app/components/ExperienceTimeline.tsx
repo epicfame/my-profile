@@ -19,8 +19,8 @@ const experiences: Experience[] = [
         period: "March 2026 - Present",
         type: "current",
         highlights: [
-            "Gathered and translated requirements for 5+ application enhancement and development projects",
             "Analyzed business processes and proposed solutions that reduced manual workflows by up to 30%",
+            "Gathered and translated requirements for 10+ application enhancement and development projects",
             "Produced technical specifications, system flows, and documentation to guide development teams",
             "Collaborated with business stakeholders and development teams for on-time delivery",
         ],
@@ -33,7 +33,7 @@ const experiences: Experience[] = [
         type: "past",
         highlights: [
             "Developed and maintained ERP modules for Finance, HR, and Payroll operations",
-            "Built and integrated 20+ RESTful APIs for web applications and internal systems",
+            "Built and integrated 20+ RESTful APIs, background job, and fullstack application for web applications and internal systems",
             "Improved application performance by optimizing database queries and using multithreading by 50%",
             "Implemented queue-based background jobs for report generation and automation",
         ],
@@ -47,7 +47,7 @@ const experiences: Experience[] = [
         highlights: [
             "Developed RESTful APIs and CRUD modules for ERP system enhancements",
             "Assisted in feature development, bug fixing, and production issue investigation",
-            "Developed and maintained a Fixed Asset Management System",
+            "Developed and maintained a Fixed Asset Management System to reduce the manual work",
         ],
     },
 ];
