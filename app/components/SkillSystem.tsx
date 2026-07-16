@@ -1,142 +1,119 @@
 "use client";
 
 import React, { useState } from "react";
-import { HardDrive, Compass, Terminal, ShieldAlert, CheckCircle2 } from "lucide-react";
 
 interface Skill {
     name: string;
-    category: "frontend" | "backend" | "tools";
+    category: "frontend" | "backend" | "tools" | "soft";
 }
 
 export default function SkillSystem() {
-    const [activeCategory, setActiveCategory] = useState<"all" | "backend" | "frontend" | "tools">("all");
+    const [activeCategory, setActiveCategory] = useState<"all" | "frontend" | "backend" | "tools" | "soft">("all");
 
     const skills: Skill[] = [
-        // Frontend
-        { name: "React.js", category: "frontend" },
+        { name: "React", category: "frontend" },
         { name: "Next.js", category: "frontend" },
-        { name: "JavaScript (ES6+)", category: "frontend" },
+        { name: "JavaScript", category: "frontend" },
         { name: "TypeScript", category: "frontend" },
-
-        // Backend
-        { name: "Node.js / Express", category: "backend" },
-        { name: "REST APIs", category: "backend" },
-
-        // Tools & Aux
-        { name: "Git / Version Control", category: "tools" },
+        { name: "HTML", category: "frontend" },
+        { name: "CSS", category: "frontend" },
+        { name: "Node.js", category: "backend" },
+        { name: "NestJS", category: "backend" },
+        { name: "PHP", category: "backend" },
+        { name: "Laravel", category: "backend" },
+        { name: "MySQL", category: "backend" },
+        { name: "GIT", category: "tools" },
+        { name: "Responsible", category: "soft" },
+        { name: "Problem-solving", category: "soft" },
+        { name: "Adaptability", category: "soft" },
+        { name: "Fast Learner", category: "soft" },
     ];
 
     const filteredSkills = activeCategory === "all"
         ? skills
         : skills.filter(s => s.category === activeCategory);
 
-    const getCategoryTheme = (category: string) => {
+    const getCategoryStyles = (category: string) => {
         switch (category) {
-            case "frontend":
-                return {
-                    bg: "bg-cyan-950/20",
-                    border: "border-cyan-800/40",
-                    barBg: "bg-cyan-950",
-                    barColor: "bg-cyan-500",
-                    text: "text-cyan-400",
-                    glow: "shadow-[0_0_12px_rgba(6,182,212,0.3)]",
-                };
-            case "backend":
-                return {
-                    bg: "bg-indigo-950/20",
-                    border: "border-indigo-800/40",
-                    barBg: "bg-indigo-950",
-                    barColor: "bg-indigo-500",
-                    text: "text-indigo-400",
-                    glow: "shadow-[0_0_12px_rgba(99,102,241,0.3)]",
-                };
-            default:
-                return {
-                    bg: "bg-slate-900/20",
-                    border: "border-slate-800/60",
-                    barBg: "bg-slate-950",
-                    barColor: "bg-slate-400",
-                    text: "text-slate-400",
-                    glow: "shadow-[0_0_12px_rgba(148,163,184,0.2)]",
-                };
+            case "frontend": return "bg-violet-500/20 border-violet-500/30 text-violet-300";
+            case "backend": return "bg-blue-500/20 border-blue-500/30 text-blue-300";
+            case "tools": return "bg-emerald-500/20 border-emerald-500/30 text-emerald-300";
+            case "soft": return "bg-amber-500/20 border-amber-500/30 text-amber-300";
+            default: return "bg-zinc-500/20 border-zinc-500/30 text-zinc-300";
         }
     };
 
-    return (
-        <div className="glass-panel rounded-2xl p-6 md:p-8 border border-slate-800 relative">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                <div>
-                    <h3 className="text-xl md:text-2xl font-mono text-cyan-400 mb-2 flex items-center gap-2">
-                        Technical Skills
-                    </h3>
-                </div>
+    const getDotColor = (category: string) => {
+        switch (category) {
+            case "frontend": return "bg-violet-400";
+            case "backend": return "bg-blue-400";
+            case "tools": return "bg-emerald-400";
+            case "soft": return "bg-amber-400";
+            default: return "bg-zinc-400";
+        }
+    };
 
-                {/* Filter Buttons */}
-                <div className="flex flex-wrap gap-2 font-mono text-xs">
-                    {[
-                        { id: "all", label: "ALL" },
-                        { id: "frontend", label: "FRONTEND" },
-                        { id: "backend", label: "BACKEND" },
-                        { id: "tools", label: "TOOLS" },
-                    ].map((cat) => (
+    const getCategoryLabel = (category: string) => {
+        switch (category) {
+            case "frontend": return "Frontend";
+            case "backend": return "Backend";
+            case "tools": return "Tools";
+            case "soft": return "Soft Skills";
+            default: return "Other";
+        }
+    };
+
+    const categories = [
+        { id: "all", label: "All Skills" },
+        { id: "frontend", label: "Frontend" },
+        { id: "backend", label: "Backend" },
+        { id: "tools", label: "Tools" },
+        { id: "soft", label: "Soft Skills" },
+    ];
+
+    return (
+        <div className="glass-card rounded-3xl p-6 md:p-8">
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap justify-center gap-2 mb-10">
+                {categories.map((cat) => {
+                    const isActive = activeCategory === cat.id;
+                    return (
                         <button
                             key={cat.id}
                             onClick={() => setActiveCategory(cat.id as any)}
-                            className={`px-3 py-2 rounded-md border transition-all ${activeCategory === cat.id
-                                ? "bg-cyan-950/40 border-cyan-500 text-cyan-300"
-                                : "bg-slate-950/40 border-slate-900 text-slate-400 hover:border-slate-800 hover:text-slate-200"
-                                }`}
+                            className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
+                                isActive
+                                    ? getCategoryStyles(cat.id === "all" ? "frontend" : cat.id) // Use a default style for 'all' when active, or customize
+                                    : "bg-white/[0.02] text-zinc-400 hover:text-zinc-200 border border-white/[0.05] hover:bg-white/[0.06]"
+                            } ${isActive && cat.id === "all" ? "bg-white/10 border-white/20 text-white" : ""}`}
                         >
                             {cat.label}
                         </button>
-                    ))}
-                </div>
-            </div>
-
-            {/* Skills Matrix */}
-            <div className="grid md:grid-cols-2 gap-6">
-                {filteredSkills.map((skill, index) => {
-                    const theme = getCategoryTheme(skill.category);
-                    return (
-                        <div
-                            key={skill.name}
-                            className={`p-4 rounded-xl border ${theme.bg} ${theme.border} flex flex-col justify-between hover:border-slate-700/80 transition-all`}
-                        >
-                            <div className="flex items-center justify-between mb-3">
-                                <span className="font-mono text-sm font-semibold tracking-wide text-slate-200 flex items-center gap-2">
-                                    <span className={`w-1.5 h-1.5 rounded-full ${theme.barColor}`} />
-                                    {skill.name}
-                                </span>
-                            </div>
-
-                            <div className="flex justify-between items-center mt-2.5 font-mono text-[10px] text-slate-500">
-                                <span className="uppercase">{skill.category} MODULE</span>
-                                <span className="flex items-center gap-1 text-emerald-500">
-                                    <CheckCircle2 className="w-3 h-3" />
-                                    STATUS OK
-                                </span>
-                            </div>
-                        </div>
-                    );
+                    )
                 })}
             </div>
 
-            {/* Spacecraft Diagnostics Banner */}
-            <div className="mt-8 pt-6 border-t border-slate-900/80 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-slate-500">
-                <div className="flex items-center gap-2">
-                    <Terminal className="w-4 h-4 text-indigo-500" />
-                    <span>DIAGNOSTIC: READY_FOR_MISSION</span>
-                </div>
-                <div className="flex items-center gap-4">
-                    <span className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-                        Backend Systems
-                    </span>
-                    <span className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-                        Frontend Systems
-                    </span>
-                </div>
+            {/* Skills Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
+                {filteredSkills.map((skill, i) => (
+                    <div
+                        key={skill.name}
+                        className="glass-hover flex items-center gap-3 px-4 py-3.5 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.05] group"
+                        style={{
+                            animation: `scale-in 0.3s ease-out ${i * 0.05}s both`
+                        }}
+                    >
+                        <span className={`w-2 h-2 rounded-full ${getDotColor(skill.category)} group-hover:animate-pulse shadow-lg`} />
+                        <div className="flex flex-col">
+                            <span className="text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors">
+                                {skill.name}
+                            </span>
+                            <span className="text-[10px] uppercase tracking-wider text-zinc-500 font-medium">
+                                {getCategoryLabel(skill.category)}
+                            </span>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
