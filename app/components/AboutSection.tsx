@@ -4,7 +4,7 @@ import { Briefcase, GraduationCap, Code, Globe } from "lucide-react";
 
 const stats = [
     { icon: Briefcase, label: "Years Experience", value: "3+", color: "violet" },
-    { icon: Code, label: "Projects Delivered", value: "4+", color: "blue" },
+    { icon: Code, label: "Production Systems", value: "10+", color: "blue" },
     { icon: GraduationCap, label: "GPA", value: "3.85", color: "emerald" },
     { icon: Globe, label: "Live Projects", value: "4", color: "amber" },
 ];

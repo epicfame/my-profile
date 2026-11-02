@@ -291,7 +291,7 @@ export default function Home() {
                             Featured Projects
                         </h2>
                         <p className="text-zinc-400 text-base max-w-2xl mx-auto">
-                            A showcase of my recent work, highlighting full-stack capabilities, system architecture, and UI polish.
+                            A selection of public products and production systems, highlighting full-stack capabilities, system architecture, and UI polish.
                         </p>
                     </div>
                     <ProjectShowcase />

@@ -39,6 +39,14 @@ export default function ProjectShowcase() {
 
     const projects: Project[] = [
         {
+            title: "Polytron ERP Systems",
+            role: "Application Developer / System Analyst",
+            period: "March 2023 - Present",
+            description: "Production ERP systems supporting Finance, HR, and Payroll across multiple departments. Contributed to 10+ enhancement and development projects, 20+ REST APIs, performance improvements, and queue-based background jobs.",
+            category: "fullstack",
+            tags: ["Laravel", "PHP", "MySQL", "REST APIs", "Background Jobs"],
+        },
+        {
             title: "CashierLess",
             role: "Full-Stack Developer",
             period: "September 2026 - Present",
