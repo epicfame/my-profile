@@ -39,10 +39,19 @@ export default function ProjectShowcase() {
 
     const projects: Project[] = [
         {
+            title: "CashierLess",
+            role: "Full-Stack Developer",
+            period: "September 2026 - Present",
+            description: "QR-based ordering platform for restaurants and cafes. Building merchant dashboards and customer ordering flows, with a Supabase-backed data model and storage ready for payment gateway integration.",
+            category: "fullstack",
+            tags: ["Next.js", "React", "TypeScript", "PostgreSQL", "Supabase"],
+            liveUrl: "https://cashierless.vercel.app",
+        },
+        {
             title: "Landezy",
             role: "Frontend Engineer",
             period: "2026 – Present",
-            description: "Developing a property marketplace platform building responsive UI components for property listing and management workflows. Integrating REST APIs, authentication, and frontend state management.",
+            description: "Property marketplace built with Next.js, React, and TypeScript. Building reusable UI components for property listing and management workflows while integrating REST APIs, authentication, and frontend state management.",
             category: "frontend",
             tags: ["Next.js", "React", "TypeScript", "REST APIs"],
         },
@@ -91,7 +100,7 @@ export default function ProjectShowcase() {
                 ].map((item) => (
                     <button
                         key={item.id}
-                        onClick={() => setFilter(item.id as any)}
+                        onClick={() => setFilter(item.id as "all" | Project["category"])}
                         className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${filter === item.id
                             ? "bg-white/10 text-white border border-white/20 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
                             : "bg-white/[0.02] text-zinc-400 hover:text-zinc-200 border border-white/[0.06] hover:bg-white/[0.06]"
@@ -141,7 +150,16 @@ export default function ProjectShowcase() {
                                 {project.liveUrl && (
                                     <div 
                                         className="w-full h-32 md:h-40 mb-6 rounded-xl overflow-hidden border border-white/[0.08] bg-zinc-900/50 relative group/iframe cursor-pointer hover:border-violet-500/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-300 ring-1 ring-transparent hover:ring-violet-500/20 flex flex-col"
-                                        onClick={() => setPreviewProject(project)}
+                                         onClick={() => setPreviewProject(project)}
+                                         role="button"
+                                         tabIndex={0}
+                                         onKeyDown={(event) => {
+                                             if (event.key === "Enter" || event.key === " ") {
+                                                 event.preventDefault();
+                                                 setPreviewProject(project);
+                                             }
+                                         }}
+                                         aria-label={`Open live preview for ${project.title}`}
                                     >
                                         {/* Mock browser header */}
                                         <div className="h-6 bg-white/[0.04] border-b border-white/[0.08] flex items-center px-3 gap-1.5 w-full z-20">

@@ -189,13 +189,13 @@ export default function Home() {
                             Hi, I&apos;m <span className="text-white font-bold">Giovanni Jose</span> 👋
                         </h2>
                         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-zinc-100">
-                            Frontend <span className="gradient-text">Engineer</span>
+                            Software <span className="gradient-text">Engineer</span>
                         </h1>
                     </div>
 
                     <p className="max-w-2xl text-zinc-400 text-base md:text-lg leading-relaxed animate-slide-up-delayed-2">
-                        A passionate Software Engineer focusing on Frontend Development.
-                        I transform complex problems into elegant, user-friendly solutions using modern web technologies.
+                        I build reliable, user-friendly digital products with React, Next.js, and TypeScript,
+                        backed by hands-on experience in APIs, databases, ERP systems, and system analysis.
                     </p>
 
                     {/* Actions & Socials */}
@@ -220,10 +220,10 @@ export default function Home() {
 
                     {/* Social links */}
                     <div className="flex items-center gap-4 pt-6 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-                        <a href="https://github.com/epicfame" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-zinc-400 hover:text-white hover:border-violet-500/50 transition-colors">
+                        <a href="https://github.com/epicfame" target="_blank" rel="noopener noreferrer" aria-label="Giovanni on GitHub" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-zinc-400 hover:text-white hover:border-violet-500/50 transition-colors">
                             <Github className="w-5 h-5" />
                         </a>
-                        <a href="https://www.linkedin.com/in/giovanni-jose-ricardo" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                        <a href="https://www.linkedin.com/in/giovanni-jose-ricardo" target="_blank" rel="noopener noreferrer" aria-label="Giovanni on LinkedIn" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
                             <Linkedin className="w-5 h-5" />
                         </a>
                         <a href="mailto:giovanni.jricardo@gmail.com" className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-zinc-400 hover:text-white hover:border-emerald-500/50 transition-colors">
@@ -384,7 +384,7 @@ export default function Home() {
                             giovanni<span className="text-violet-400">.</span>jr
                         </a>
                         <p className="text-sm text-zinc-500 max-w-xs text-center md:text-left">
-                            Frontend Engineer focused on building exceptional digital experiences.
+                             Software Engineer focused on building reliable, user-friendly digital products.
                         </p>
                     </div>
 

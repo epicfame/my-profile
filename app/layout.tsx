@@ -9,10 +9,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-    title: "Giovanni Jose | Frontend Engineer",
-    description: "Frontend Engineer specializing in React, Next.js, and TypeScript. Building modern, responsive web experiences.",
-    keywords: ["Frontend Engineer", "React", "Next.js", "TypeScript", "Web Developer", "Portfolio"],
+    title: "Giovanni Jose Ricardo | Software Engineer",
+    description: "Software Engineer specializing in frontend engineering with React, Next.js, and TypeScript, backed by full-stack ERP experience.",
+    keywords: ["Giovanni Jose Ricardo", "Software Engineer", "Frontend Engineer", "React", "Next.js", "TypeScript", "Portfolio"],
     authors: [{ name: "Giovanni Jose" }],
+    openGraph: {
+        title: "Giovanni Jose Ricardo | Software Engineer",
+        description: "Software Engineer building reliable, user-friendly digital products with React, Next.js, and TypeScript.",
+        type: "website",
+    },
 };
 
 export default function RootLayout({

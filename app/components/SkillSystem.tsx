@@ -4,11 +4,11 @@ import React, { useState } from "react";
 
 interface Skill {
     name: string;
-    category: "frontend" | "backend" | "tools" | "soft";
+    category: "frontend" | "backend" | "database" | "tools" | "soft";
 }
 
 export default function SkillSystem() {
-    const [activeCategory, setActiveCategory] = useState<"all" | "frontend" | "backend" | "tools" | "soft">("all");
+    const [activeCategory, setActiveCategory] = useState<"all" | Skill["category"]>("all");
 
     const skills: Skill[] = [
         { name: "React", category: "frontend" },
@@ -21,6 +21,8 @@ export default function SkillSystem() {
         { name: "NestJS", category: "backend" },
         { name: "PHP", category: "backend" },
         { name: "Laravel", category: "backend" },
+        { name: "PostgreSQL", category: "database" },
+        { name: "Supabase", category: "database" },
         { name: "MySQL", category: "backend" },
         { name: "GIT", category: "tools" },
         { name: "Responsible", category: "soft" },
@@ -37,6 +39,7 @@ export default function SkillSystem() {
         switch (category) {
             case "frontend": return "bg-violet-500/20 border-violet-500/30 text-violet-300";
             case "backend": return "bg-blue-500/20 border-blue-500/30 text-blue-300";
+            case "database": return "bg-cyan-500/20 border-cyan-500/30 text-cyan-300";
             case "tools": return "bg-emerald-500/20 border-emerald-500/30 text-emerald-300";
             case "soft": return "bg-amber-500/20 border-amber-500/30 text-amber-300";
             default: return "bg-zinc-500/20 border-zinc-500/30 text-zinc-300";
@@ -47,6 +50,7 @@ export default function SkillSystem() {
         switch (category) {
             case "frontend": return "bg-violet-400";
             case "backend": return "bg-blue-400";
+            case "database": return "bg-cyan-400";
             case "tools": return "bg-emerald-400";
             case "soft": return "bg-amber-400";
             default: return "bg-zinc-400";
@@ -57,16 +61,18 @@ export default function SkillSystem() {
         switch (category) {
             case "frontend": return "Frontend";
             case "backend": return "Backend";
+            case "database": return "Database";
             case "tools": return "Tools";
             case "soft": return "Soft Skills";
             default: return "Other";
         }
     };
 
-    const categories = [
+    const categories: Array<{ id: "all" | Skill["category"]; label: string }> = [
         { id: "all", label: "All Skills" },
         { id: "frontend", label: "Frontend" },
         { id: "backend", label: "Backend" },
+        { id: "database", label: "Database" },
         { id: "tools", label: "Tools" },
         { id: "soft", label: "Soft Skills" },
     ];
@@ -80,7 +86,7 @@ export default function SkillSystem() {
                     return (
                         <button
                             key={cat.id}
-                            onClick={() => setActiveCategory(cat.id as any)}
+                            onClick={() => setActiveCategory(cat.id)}
                             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                                 isActive
                                     ? getCategoryStyles(cat.id === "all" ? "frontend" : cat.id) // Use a default style for 'all' when active, or customize

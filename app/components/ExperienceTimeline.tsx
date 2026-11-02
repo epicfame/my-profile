@@ -13,11 +13,23 @@ interface Experience {
 
 const experiences: Experience[] = [
     {
+        title: "Application Developer",
+        company: "PT. Hartono Istana Teknologi (Polytron)",
+        location: "Kudus, Indonesia",
+        period: "September 2026 - Present",
+        type: "current",
+        highlights: [
+            "Develop and maintain ERP modules for Finance, HR, and Payroll",
+            "Integrate REST APIs and resolve defects across business-critical workflows",
+            "Improve performance and maintainability through code and database optimization",
+        ],
+    },
+    {
         title: "System Analyst",
         company: "PT. Hartono Istana Teknologi (Polytron)",
         location: "Kudus, Indonesia",
-        period: "March 2026 - Present",
-        type: "current",
+        period: "March 2026 - September 2026",
+        type: "past",
         highlights: [
             "Analyzed business processes and proposed solutions that reduced manual workflows by up to 30%",
             "Gathered and translated requirements for 10+ application enhancement and development projects",
@@ -33,9 +45,9 @@ const experiences: Experience[] = [
         type: "past",
         highlights: [
             "Developed and maintained ERP modules for Finance, HR, and Payroll operations",
-            "Built and integrated 20+ RESTful APIs, background job, and fullstack application for web applications and internal systems",
-            "Improved application performance by optimizing database queries and using multithreading by 50%",
-            "Implemented queue-based background jobs for report generation and automation",
+            "Built and integrated 20+ RESTful APIs for web applications and internal systems",
+            "Reduced processing time by 50% through query optimization, legacy refactoring, and multithreading",
+            "Implemented queue-based background jobs for report generation, notifications, and automation",
         ],
     },
     {

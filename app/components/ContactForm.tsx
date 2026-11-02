@@ -152,8 +152,8 @@ export default function ContactForm() {
                         <CheckCircle className="w-7 h-7 text-emerald-400" />
                     </div>
                     <div>
-                        <h4 className="text-lg font-semibold text-zinc-100 mb-1">Message Sent!</h4>
-                        <p className="text-sm text-zinc-400">Your email client should have opened. I&apos;ll get back to you soon.</p>
+                        <h4 className="text-lg font-semibold text-zinc-100 mb-1">Email Draft Ready</h4>
+                        <p className="text-sm text-zinc-400">Your email client should have opened with the message pre-filled.</p>
                     </div>
                     <button
                         onClick={reset}
